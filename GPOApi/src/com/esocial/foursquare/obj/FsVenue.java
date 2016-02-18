@@ -9,10 +9,29 @@ import fi.foyt.foursquare.api.entities.CompactVenue;
 
 public class FsVenue {
 	
+	public String id;
+	public String fk_ubicacion;
+    public String fk_pais;
+    public String fk_category;
+    public String name;
+    public String phone;
+    public Double lat;
+    public Double lon;
+    public Double distance;
+    public Integer checkinscount;
+    public Integer userscount;
+    public Integer tipcount;
+    public Integer estado;
+    public String created_at;
+    public String updated_at;
+    public String token;
+    
+	
 	public FsVenue(String pk_ubicacion, String fk_pais, CompactVenue venue){
-		this.id = venue.getId();
+		this.id = venue.getId()+"_"+pk_ubicacion;
 		this.name = venue.getName();
 		this.fk_pais = fk_pais;
+		this.fk_ubicacion = pk_ubicacion;
 		this.estado = 1;
 		this.token = Utils.getTokenFromString(pk_ubicacion + venue.getId());
 		
@@ -53,20 +72,6 @@ public class FsVenue {
 		}
 	}
 	
-	public String id;
-    public String fk_pais;
-    public String fk_category;
-    public String name;
-    public String phone;
-    public Double lat;
-    public Double lon;
-    public Double distance;
-    public Integer checkinscount;
-    public Integer userscount;
-    public Integer tipcount;
-    public Integer estado;
-    public String created_at;
-    public String updated_at;
-    public String token;
+	
 	
 }
