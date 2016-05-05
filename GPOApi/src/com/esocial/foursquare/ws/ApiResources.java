@@ -91,7 +91,7 @@ public class ApiResources {
 			// After client has been initialized we can make queries.
 			Result<VenuesSearchResult> result;
 			try {
-				result = foursquareApi.venuesSearch(ll, null, null, null, null, null, null, null,
+				result = foursquareApi.venuesSearch(ll, null, null, null, null, 50, null, null,
 						null, null, null, Resources.radius, null);
 			} catch (FoursquareApiException e) {
 				Log.e(400, "ERROR FOURSQUARE", e.getMessage());
